@@ -41,7 +41,7 @@ class CurrencyTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: kCoinCellReuseIdentifier) as! CoinTableViewCell
-        cell.formatCellFor(currency: defaultCurrencies[indexPath.row])
+        cell.formatCellFor(currencyName: defaultCurrencies[indexPath.row])
         return cell
     }
     

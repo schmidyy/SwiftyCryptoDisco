@@ -49,7 +49,7 @@ class ContainerViewController: UIViewController, CurrencyTableViewDelegate {
     
     //MARK: - Event Handlers
     @IBAction func addCoinButtonTapped(_ sender: UIButton) {
-        let addCoinVC = storyboard?.instantiateViewController(withIdentifier: "addCoinVC") as! UITableViewController
+        let addCoinVC = storyboard?.instantiateViewController(withIdentifier: "addCoinVC") as! AddCoinTableViewController
         mainNavigationController.pushViewController(addCoinVC, animated: true)
     }
     

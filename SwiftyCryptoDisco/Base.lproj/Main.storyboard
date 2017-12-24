@@ -216,7 +216,7 @@
         <!--Add Currency-->
         <scene sceneID="R4z-yY-uXg">
             <objects>
-                <tableViewController storyboardIdentifier="addCoinVC" title="Add Currency" id="4Tc-rL-ZWu" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="addCoinVC" title="Add Currency" id="4Tc-rL-ZWu" customClass="AddCoinTableViewController" customModule="SwiftyCryptoDisco" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hjx-Y8-uNF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="608"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

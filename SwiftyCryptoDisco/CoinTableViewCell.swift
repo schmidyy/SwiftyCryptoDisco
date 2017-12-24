@@ -19,12 +19,12 @@ class CoinTableViewCell: UITableViewCell {
     @IBOutlet weak var currencyDotSeperatorLabel: UILabel!
     @IBOutlet weak var currenceConversionLabel: UILabel!
     
-    func formatCellFor(currency: String) {
+    func formatCellFor(currencyName: String) {
         
         let dataFetcher = CurrencyDataFetcher()
-        dataFetcher.getDataForCurrency(currency: currency) { (coin) in
+        dataFetcher.getDataForCurrency(currency: currencyName) { (coin) in
             guard let coin = coin else {
-                print("Unable to get data for currency: \(currency)")
+                print("Unable to get data for currency: \(currencyName)")
                 return
             }
             self.currencyNameLabel.text = coin.name
@@ -42,6 +42,23 @@ class CoinTableViewCell: UITableViewCell {
                 }
             }
             
+        }
+    }
+    
+    func formatCellFor(currency: Currency) {
+        self.currencyNameLabel.text = currency.name
+        self.currencyPriceLabel.text = currency.priceUSD.formattedCurrencyString
+        self.currencyRankLabel.text = "\(currency.rank)"
+        self.currency24hrChangeLabel.text = String(format: "%0.2f%%", currency.percentChangeDaily)
+        self.currenceConversionLabel.text = currency.symbol + "/USD"
+        
+        if currency.percentChangeDaily >= 0 {
+            DispatchQueue.main.async {
+                self.currency24hrChangeLabel.textColor = UIColor(named: "fluoGreen")
+                self.currencyArrowImageView.tintColor = UIColor(named: "fluoGreen")
+                self.currencyDotSeperatorLabel.textColor = UIColor(named: "fluoGreen")
+                self.currencyArrowImageView.transform = CGAffineTransform(scaleX: 1, y: -1)
+            }
         }
     }
 }
