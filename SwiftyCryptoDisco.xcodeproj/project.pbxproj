@@ -8,20 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		275851B21FEDC7B20032B748 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275851B11FEDC7B20032B748 /* AppDelegate.swift */; };
-		275851B41FEDC7B20032B748 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275851B31FEDC7B20032B748 /* ViewController.swift */; };
 		275851B71FEDC7B20032B748 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 275851B51FEDC7B20032B748 /* Main.storyboard */; };
 		275851B91FEDC7B20032B748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275851B81FEDC7B20032B748 /* Assets.xcassets */; };
 		275851BC1FEDC7B20032B748 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 275851BA1FEDC7B20032B748 /* LaunchScreen.storyboard */; };
+		275851C41FEDDDE40032B748 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275851C31FEDDDE40032B748 /* ContainerViewController.swift */; };
+		275851C61FEDDE2D0032B748 /* CurrencyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275851C51FEDDE2D0032B748 /* CurrencyTableViewController.swift */; };
+		275851C81FEDDE5A0032B748 /* CoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275851C71FEDDE5A0032B748 /* CoinTableViewCell.swift */; };
+		275851CA1FEDFD740032B748 /* CurrencyDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275851C91FEDFD740032B748 /* CurrencyDataFetcher.swift */; };
+		275851CD1FEEEE250032B748 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275851CC1FEEEE250032B748 /* Currency.swift */; };
+		275851CF1FF009720032B748 /* AddCoinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275851CE1FF009720032B748 /* AddCoinTableViewController.swift */; };
+		89C6C343FE592743E2122237 /* Pods_SwiftyCryptoDisco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6BB04DCE507464BC286AA5 /* Pods_SwiftyCryptoDisco.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		275851AE1FEDC7B20032B748 /* SwiftyCryptoDisco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyCryptoDisco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		275851B11FEDC7B20032B748 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		275851B31FEDC7B20032B748 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		275851B61FEDC7B20032B748 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		275851B81FEDC7B20032B748 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		275851BB1FEDC7B20032B748 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		275851BD1FEDC7B20032B748 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		275851C31FEDDDE40032B748 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		275851C51FEDDE2D0032B748 /* CurrencyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewController.swift; sourceTree = "<group>"; };
+		275851C71FEDDE5A0032B748 /* CoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTableViewCell.swift; sourceTree = "<group>"; };
+		275851C91FEDFD740032B748 /* CurrencyDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDataFetcher.swift; sourceTree = "<group>"; };
+		275851CC1FEEEE250032B748 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		275851CE1FF009720032B748 /* AddCoinTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinTableViewController.swift; sourceTree = "<group>"; };
+		4A6BB04DCE507464BC286AA5 /* Pods_SwiftyCryptoDisco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyCryptoDisco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		601EADDE0391DEB2C842348E /* Pods-SwiftyCryptoDisco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCryptoDisco.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCryptoDisco/Pods-SwiftyCryptoDisco.debug.xcconfig"; sourceTree = "<group>"; };
+		61077FDF8D1CBAD93BE34C06 /* Pods-SwiftyCryptoDisco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCryptoDisco.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCryptoDisco/Pods-SwiftyCryptoDisco.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +43,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C6C343FE592743E2122237 /* Pods_SwiftyCryptoDisco.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B801D6A9CF9232D2A286AAC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				601EADDE0391DEB2C842348E /* Pods-SwiftyCryptoDisco.debug.xcconfig */,
+				61077FDF8D1CBAD93BE34C06 /* Pods-SwiftyCryptoDisco.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		275851A51FEDC7B10032B748 = {
 			isa = PBXGroup;
 			children = (
 				275851B01FEDC7B20032B748 /* SwiftyCryptoDisco */,
 				275851AF1FEDC7B20032B748 /* Products */,
+				1B801D6A9CF9232D2A286AAC /* Pods */,
+				BEF7F4B2B97404B1DE857AA0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +81,34 @@
 			isa = PBXGroup;
 			children = (
 				275851B11FEDC7B20032B748 /* AppDelegate.swift */,
-				275851B31FEDC7B20032B748 /* ViewController.swift */,
+				275851C31FEDDDE40032B748 /* ContainerViewController.swift */,
+				275851C51FEDDE2D0032B748 /* CurrencyTableViewController.swift */,
+				275851CE1FF009720032B748 /* AddCoinTableViewController.swift */,
+				275851C71FEDDE5A0032B748 /* CoinTableViewCell.swift */,
+				275851C91FEDFD740032B748 /* CurrencyDataFetcher.swift */,
+				275851CC1FEEEE250032B748 /* Currency.swift */,
 				275851B51FEDC7B20032B748 /* Main.storyboard */,
-				275851B81FEDC7B20032B748 /* Assets.xcassets */,
-				275851BA1FEDC7B20032B748 /* LaunchScreen.storyboard */,
 				275851BD1FEDC7B20032B748 /* Info.plist */,
+				275851CB1FEE13820032B748 /* Supporting Files */,
 			);
 			path = SwiftyCryptoDisco;
+			sourceTree = "<group>";
+		};
+		275851CB1FEE13820032B748 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				275851B81FEDC7B20032B748 /* Assets.xcassets */,
+				275851BA1FEDC7B20032B748 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEF7F4B2B97404B1DE857AA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A6BB04DCE507464BC286AA5 /* Pods_SwiftyCryptoDisco.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +118,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 275851C01FEDC7B20032B748 /* Build configuration list for PBXNativeTarget "SwiftyCryptoDisco" */;
 			buildPhases = (
+				4C3FE3E24C6955CB9469408A /* [CP] Check Pods Manifest.lock */,
 				275851AA1FEDC7B20032B748 /* Sources */,
 				275851AB1FEDC7B20032B748 /* Frameworks */,
 				275851AC1FEDC7B20032B748 /* Resources */,
+				CDD7F2F6BCECACA6D5D97B25 /* [CP] Embed Pods Frameworks */,
+				8C01F3965544CB34263F7EF5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,12 +181,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4C3FE3E24C6955CB9469408A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftyCryptoDisco-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C01F3965544CB34263F7EF5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCryptoDisco/Pods-SwiftyCryptoDisco-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDD7F2F6BCECACA6D5D97B25 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCryptoDisco/Pods-SwiftyCryptoDisco-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCryptoDisco/Pods-SwiftyCryptoDisco-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		275851AA1FEDC7B20032B748 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				275851B41FEDC7B20032B748 /* ViewController.swift in Sources */,
+				275851CF1FF009720032B748 /* AddCoinTableViewController.swift in Sources */,
+				275851CD1FEEEE250032B748 /* Currency.swift in Sources */,
+				275851C61FEDDE2D0032B748 /* CurrencyTableViewController.swift in Sources */,
+				275851C41FEDDDE40032B748 /* ContainerViewController.swift in Sources */,
+				275851CA1FEDFD740032B748 /* CurrencyDataFetcher.swift in Sources */,
+				275851C81FEDDE5A0032B748 /* CoinTableViewCell.swift in Sources */,
 				275851B21FEDC7B20032B748 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +383,7 @@
 		};
 		275851C11FEDC7B20032B748 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 601EADDE0391DEB2C842348E /* Pods-SwiftyCryptoDisco.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -280,13 +392,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = matschmid.SwiftyCryptoDisco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		275851C21FEDC7B20032B748 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61077FDF8D1CBAD93BE34C06 /* Pods-SwiftyCryptoDisco.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -295,7 +408,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = matschmid.SwiftyCryptoDisco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
