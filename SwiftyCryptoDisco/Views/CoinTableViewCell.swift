@@ -45,14 +45,14 @@ class CoinTableViewCell: UITableViewCell {
         }
     }
     
-    func formatCellFor(currency: Currency) {
-        self.currencyNameLabel.text = currency.name
-        self.currencyPriceLabel.text = currency.priceUSD.formattedCurrencyString
-        self.currencyRankLabel.text = "\(currency.rank)"
-        self.currency24hrChangeLabel.text = String(format: "%0.2f%%", currency.percentChangeDaily)
-        self.currenceConversionLabel.text = currency.symbol + "/USD"
+    func formatCellFor(coin: Currency) {
+        self.currencyNameLabel.text = coin.name
+        self.currencyPriceLabel.text = coin.priceCAD?.formattedCurrencyString
+        self.currencyRankLabel.text = "\(coin.rank)"
+        self.currency24hrChangeLabel.text = String(format: "%0.2f%%", coin.percentChangeDaily)
+        self.currenceConversionLabel.text = coin.symbol + "/CAD"
         
-        if currency.percentChangeDaily >= 0 {
+        if coin.percentChangeDaily >= 0 {
             DispatchQueue.main.async {
                 self.currency24hrChangeLabel.textColor = UIColor(named: "fluoGreen")
                 self.currencyArrowImageView.tintColor = UIColor(named: "fluoGreen")

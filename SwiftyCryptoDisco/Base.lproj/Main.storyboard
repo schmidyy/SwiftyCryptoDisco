@@ -204,9 +204,13 @@
                             <outlet property="delegate" destination="CyS-YQ-vqg" id="sis-IT-Kyi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Crypto Disco" id="DRV-Ry-YC7"/>
+                    <navigationItem key="navigationItem" title="Crypto Disco" id="DRV-Ry-YC7">
+                        <barButtonItem key="rightBarButtonItem" id="FsW-BA-4z8">
+                            <color key="tintColor" name="fluoGreen"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <segue destination="4Tc-rL-ZWu" kind="show" id="QIg-2x-ozW"/>
+                        <segue destination="4Tc-rL-ZWu" kind="show" identifier="addVC" id="QIg-2x-ozW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rk6-ig-KB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -222,16 +226,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" white="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" searchBarStyle="prominent" placeholder="Search a currency" id="awa-4X-MeV">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" searchBarStyle="prominent" placeholder="Search a currency" showsCancelButton="YES" id="awa-4X-MeV">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="barTintColor" white="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="search"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CoinCell" rowHeight="66" id="gms-qI-4Zl" customClass="CoinTableViewCell" customModule="SwiftyCryptoDisco" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="66"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gms-qI-4Zl" id="2NN-Yi-NEe">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
@@ -337,6 +345,9 @@
                             <outlet property="delegate" destination="4Tc-rL-ZWu" id="zEF-xC-a41"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="currencySearchBar" destination="awa-4X-MeV" id="pgp-N9-YRc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYQ-kV-aNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -374,6 +385,9 @@
         </namedColor>
         <namedColor name="flatRed">
             <color red="0.90600001811981201" green="0.29800000786781311" blue="0.23499999940395355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="fluoGreen">
+            <color red="0.18400000035762787" green="1" blue="0.53700000047683716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

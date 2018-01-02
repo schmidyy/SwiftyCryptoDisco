@@ -28,17 +28,18 @@ class CurrencyDataFetcher {
     }
     
     func getDataForAllCurencies(completion: @escaping(_ coins: [Currency]?) -> Void) {
-        let apiURL = "https://api.coinmarketcap.com/v1/ticker/"
+        let apiURL = "https://api.coinmarketcap.com/v1/ticker/?convert=CAD&limit=250"
         var coins : [Currency] = []
         Alamofire.request(apiURL).responseJSON { (response) in
             if let data = response.data {
                 let json = JSON(data)
                 for subJson in json {
                     let coin = Currency(withDictionary: subJson.1)
-                    print(coin.name)
                     coins.append(coin)
                 }
                 completion(coins)
+            } else {
+                completion(nil)
             }
         }
     }

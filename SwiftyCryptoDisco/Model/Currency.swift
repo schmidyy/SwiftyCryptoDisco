@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class Currency {
+struct Currency {
     var id                  : String
     var name                : String
     var symbol              : String
