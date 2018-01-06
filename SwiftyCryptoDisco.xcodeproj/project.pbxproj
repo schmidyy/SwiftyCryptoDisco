@@ -17,6 +17,7 @@
 		275851CA1FEDFD740032B748 /* CurrencyDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275851C91FEDFD740032B748 /* CurrencyDataFetcher.swift */; };
 		275851CD1FEEEE250032B748 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275851CC1FEEEE250032B748 /* Currency.swift */; };
 		275851CF1FF009720032B748 /* AddCoinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275851CE1FF009720032B748 /* AddCoinTableViewController.swift */; };
+		27ED56D82000253F008D02EA /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ED56D72000253F008D02EA /* SettingsTableViewController.swift */; };
 		89C6C343FE592743E2122237 /* Pods_SwiftyCryptoDisco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6BB04DCE507464BC286AA5 /* Pods_SwiftyCryptoDisco.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		275851C91FEDFD740032B748 /* CurrencyDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDataFetcher.swift; sourceTree = "<group>"; };
 		275851CC1FEEEE250032B748 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		275851CE1FF009720032B748 /* AddCoinTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinTableViewController.swift; sourceTree = "<group>"; };
+		27ED56D72000253F008D02EA /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		4A6BB04DCE507464BC286AA5 /* Pods_SwiftyCryptoDisco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyCryptoDisco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		601EADDE0391DEB2C842348E /* Pods-SwiftyCryptoDisco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCryptoDisco.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCryptoDisco/Pods-SwiftyCryptoDisco.debug.xcconfig"; sourceTree = "<group>"; };
 		61077FDF8D1CBAD93BE34C06 /* Pods-SwiftyCryptoDisco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCryptoDisco.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCryptoDisco/Pods-SwiftyCryptoDisco.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				275851C31FEDDDE40032B748 /* ContainerViewController.swift */,
 				275851C51FEDDE2D0032B748 /* CurrencyTableViewController.swift */,
 				275851CE1FF009720032B748 /* AddCoinTableViewController.swift */,
+				27ED56D72000253F008D02EA /* SettingsTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				275851CD1FEEEE250032B748 /* Currency.swift in Sources */,
 				275851C61FEDDE2D0032B748 /* CurrencyTableViewController.swift in Sources */,
 				275851C41FEDDDE40032B748 /* ContainerViewController.swift in Sources */,
+				27ED56D82000253F008D02EA /* SettingsTableViewController.swift in Sources */,
 				275851CA1FEDFD740032B748 /* CurrencyDataFetcher.swift in Sources */,
 				275851C81FEDDE5A0032B748 /* CoinTableViewCell.swift in Sources */,
 				275851B21FEDC7B20032B748 /* AppDelegate.swift in Sources */,

@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 
+let defaults = UserDefaults.standard
+
 class ContainerViewController: UIViewController, CurrencyTableViewDelegate {
 
     @IBOutlet weak var refreshDateLabel: UILabel!

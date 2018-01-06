@@ -14,8 +14,9 @@ protocol CurrencyTableViewDelegate: class {
 
 class CurrencyTableViewController: UITableViewController, AddCoinDelegate {
     
-    var defaultCurrencies = ["bitcoin", "ethereum"]
+    var defaultCurrencies: [String]?
     let kCoinCellReuseIdentifier = "CoinCell"
+    let kDefaultCurrencyNameArrayKey = "CurrencyNames"
     var refreshController: UIRefreshControl?
     var delegate : CurrencyTableViewDelegate?
     var addCoinVC: AddCoinTableViewController!
@@ -23,10 +24,21 @@ class CurrencyTableViewController: UITableViewController, AddCoinDelegate {
     //MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupRefreshController()
+        
+        if let userSavedCurrencies = defaults.value(forKey: kDefaultCurrencyNameArrayKey) {
+            defaultCurrencies = userSavedCurrencies as? [String]
+        } else {
+            defaultCurrencies = ["bitcoin", "ethereum"]
+            defaults.set(defaultCurrencies, forKey: kDefaultCurrencyNameArrayKey)
+        }
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addVC" {
             addCoinVC = segue.destination as! AddCoinTableViewController
@@ -40,7 +52,7 @@ class CurrencyTableViewController: UITableViewController, AddCoinDelegate {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return defaultCurrencies.count
+        return defaultCurrencies!.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -49,13 +61,14 @@ class CurrencyTableViewController: UITableViewController, AddCoinDelegate {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: kCoinCellReuseIdentifier) as! CoinTableViewCell
-        cell.formatCellFor(currencyName: defaultCurrencies[indexPath.row])
+        cell.formatCellFor(currencyName: defaultCurrencies![indexPath.row])
         return cell
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (action: UITableViewRowAction, indexPath:IndexPath) in
-            self.defaultCurrencies.remove(at: indexPath.row)
+            self.defaultCurrencies!.remove(at: indexPath.row)
+            defaults.set(self.defaultCurrencies, forKey: self.kDefaultCurrencyNameArrayKey)
             self.tableView.reloadData()
         }
         deleteAction.backgroundColor = UIColor(named: "flatRed")
@@ -69,6 +82,20 @@ class CurrencyTableViewController: UITableViewController, AddCoinDelegate {
     }
     
     //MARK: - Class methods
+    func fetchDefaultCurrencyData() {
+        var localDefaultCoins: [Currency] = []
+        let dataFetcher = CurrencyDataFetcher()
+        for currencyID in defaultCurrencies! {
+            dataFetcher.getDataForCurrency(currency: currencyID, completion: { (fetchedCurrency) in
+                guard let newCurrency = fetchedCurrency else {
+                    print("Error: Unable to fetch default currency data.")
+                    return
+                }
+                localDefaultCoins.append(newCurrency)
+            })
+        }
+    }
+    
     func setupRefreshController() {
         refreshController = UIRefreshControl()
         refreshController?.tintColor = UIColor(named: "flatBlue")
@@ -90,11 +117,15 @@ class CurrencyTableViewController: UITableViewController, AddCoinDelegate {
     
     //MARK: - AddCoinDelegate
     func didTapCoinWithID(id: String) {
-        if !defaultCurrencies.contains(id) {
-            defaultCurrencies.append(id)
+        if !(defaultCurrencies?.contains(id))! {
+            defaultCurrencies!.append(id)
+            defaults.set(defaultCurrencies, forKey: kDefaultCurrencyNameArrayKey)
             tableView.reloadData()
         } else {
-            // coin already in list
+            let alert = UIAlertController(title: "Error", message: "Currency already being monitored", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
         }
     }
 }

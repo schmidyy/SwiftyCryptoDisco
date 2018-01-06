@@ -19,12 +19,20 @@ class AddCoinTableViewController: UITableViewController, UISearchBarDelegate {
     var delegate : AddCoinDelegate?
     var coins: [Currency]?
     var filteredCoins : [Currency]?
+    
+    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
 
     @IBOutlet weak var currencySearchBar: UISearchBar!
     var isSearching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.center = CGPoint(x: tableView.frame.width / 2, y: tableView.frame.height / 2 - 56)
+        self.view.addSubview(activityIndicator)
+        self.activityIndicator.startAnimating()
+        
         currencySearchBar.delegate = self
         let dataFetcher  = CurrencyDataFetcher()
         dataFetcher.getDataForAllCurencies { (coinArray) in
@@ -33,6 +41,7 @@ class AddCoinTableViewController: UITableViewController, UISearchBarDelegate {
             }
             let sortedCoins = coinArray.sorted { $0.name < $1.name }
             self.coins = sortedCoins
+            self.activityIndicator.stopAnimating()
             self.tableView.reloadData()
         }
     }

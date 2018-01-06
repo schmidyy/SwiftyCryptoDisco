@@ -19,6 +19,8 @@ class CoinTableViewCell: UITableViewCell {
     @IBOutlet weak var currencyDotSeperatorLabel: UILabel!
     @IBOutlet weak var currenceConversionLabel: UILabel!
     
+    var baseCurrency: BaseCurrency?
+    
     func formatCellFor(currencyName: String) {
         
         let dataFetcher = CurrencyDataFetcher()
@@ -27,12 +29,12 @@ class CoinTableViewCell: UITableViewCell {
                 print("Unable to get data for currency: \(currencyName)")
                 return
             }
+            
             self.currencyNameLabel.text = coin.name
-            self.currencyPriceLabel.text = coin.priceCAD?.formattedCurrencyString
             self.currencyRankLabel.text = "\(coin.rank)"
             self.currency24hrChangeLabel.text = String(format: "%0.2f%%", coin.percentChangeDaily)
-            self.currenceConversionLabel.text = coin.symbol + "/CAD"
-            
+            self.getBaseCurrency(coin: coin)
+                
             if coin.percentChangeDaily >= 0 {
                 DispatchQueue.main.async {
                     self.currency24hrChangeLabel.textColor = UIColor(named: "fluoGreen")
@@ -50,7 +52,7 @@ class CoinTableViewCell: UITableViewCell {
         self.currencyPriceLabel.text = coin.priceCAD?.formattedCurrencyString
         self.currencyRankLabel.text = "\(coin.rank)"
         self.currency24hrChangeLabel.text = String(format: "%0.2f%%", coin.percentChangeDaily)
-        self.currenceConversionLabel.text = coin.symbol + "/CAD"
+        self.getBaseCurrency(coin: coin)
         
         if coin.percentChangeDaily >= 0 {
             DispatchQueue.main.async {
@@ -61,20 +63,33 @@ class CoinTableViewCell: UITableViewCell {
             }
         }
     }
+    
+    func getBaseCurrency(coin: Currency){
+        if let fetchedBaseCurrency = defaults.object(forKey: kBaseCurrencyKey) {
+            self.baseCurrency = BaseCurrency(rawValue: (fetchedBaseCurrency as? String)!)
+        } else {
+            self.baseCurrency = BaseCurrency.CAD
+        }
+        
+        switch self.baseCurrency! {
+        case .CAD:
+            self.currencyPriceLabel.text = coin.priceCAD?.formattedCurrencyString
+            self.currenceConversionLabel.text = coin.symbol + "/CAD"
+        case .USD:
+            self.currencyPriceLabel.text = coin.priceUSD.formattedCurrencyString
+            self.currenceConversionLabel.text = coin.symbol + "/USD"
+        case .BTC:
+            self.currencyPriceLabel.text = "\(coin.priceBTC)"
+            self.currenceConversionLabel.text = coin.symbol + "/BTC"
+        }
+    }
 }
 
 private extension NSNumber {
-    
-    /// Takes an optional NSNumber and converts it to USD String
-    ///
-    /// - Parameter value: The NSNumber to convert to a USD String
-    /// - Returns: The USD String or nil in the case of failure
     var formattedCurrencyString: String? {
-        /// Construct a NumberFormatter that uses the US Locale and the currency style
         let formatter = NumberFormatter()
         formatter.locale = Locale(identifier: "en_US")
         formatter.numberStyle = .currency
         return formatter.string(from: self)
     }
-    
 }
