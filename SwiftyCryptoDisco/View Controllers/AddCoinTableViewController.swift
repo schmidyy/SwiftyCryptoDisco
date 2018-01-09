@@ -39,8 +39,8 @@ class AddCoinTableViewController: UITableViewController, UISearchBarDelegate {
             guard let coinArray = coinArray else {
                 return
             }
-            let sortedCoins = coinArray.sorted { $0.name < $1.name }
-            self.coins = sortedCoins
+            //let sortedCoins = coinArray.sorted { $0.name < $1.name }
+            self.coins = /*sortedCoins*/ coinArray
             self.activityIndicator.stopAnimating()
             self.tableView.reloadData()
         }

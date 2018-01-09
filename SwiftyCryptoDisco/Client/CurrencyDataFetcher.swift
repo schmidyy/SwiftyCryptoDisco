@@ -28,7 +28,8 @@ class CurrencyDataFetcher {
     }
     
     func getDataForAllCurencies(completion: @escaping(_ coins: [Currency]?) -> Void) {
-        let apiURL = "https://api.coinmarketcap.com/v1/ticker/?convert=CAD&limit=100"
+        let coinLimit = getSearchableCoinsLimit()
+        let apiURL = "https://api.coinmarketcap.com/v1/ticker/?convert=CAD&limit=\(coinLimit)"
         var coins : [Currency] = []
         Alamofire.request(apiURL).responseJSON { (response) in
             if let data = response.data {
@@ -42,5 +43,12 @@ class CurrencyDataFetcher {
                 completion(nil)
             }
         }
+    }
+    
+    func getSearchableCoinsLimit() -> Int {
+        if let numSearchableCoinsLimit = defaults.value(forKey: kSearchableCurrenciesKey) {
+            return numSearchableCoinsLimit as! Int
+        }
+        return 100
     }
 }
