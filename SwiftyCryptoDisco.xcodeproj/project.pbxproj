@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2732E0572004264000C047ED /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2732E0552004264000C047ED /* SliderTableViewCell.swift */; };
 		2732E0582004264000C047ED /* SliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2732E0562004264000C047ED /* SliderTableViewCell.xib */; };
+		2732E05A2005551400C047ED /* CoinDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2732E0592005551400C047ED /* CoinDataViewController.swift */; };
 		275851B21FEDC7B20032B748 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275851B11FEDC7B20032B748 /* AppDelegate.swift */; };
 		275851B71FEDC7B20032B748 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 275851B51FEDC7B20032B748 /* Main.storyboard */; };
 		275851B91FEDC7B20032B748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275851B81FEDC7B20032B748 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		2732E0552004264000C047ED /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
 		2732E0562004264000C047ED /* SliderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderTableViewCell.xib; sourceTree = "<group>"; };
+		2732E0592005551400C047ED /* CoinDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataViewController.swift; sourceTree = "<group>"; };
 		275851AE1FEDC7B20032B748 /* SwiftyCryptoDisco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyCryptoDisco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		275851B11FEDC7B20032B748 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		275851B61FEDC7B20032B748 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				275851C51FEDDE2D0032B748 /* CurrencyTableViewController.swift */,
 				275851CE1FF009720032B748 /* AddCoinTableViewController.swift */,
 				27ED56D72000253F008D02EA /* SettingsTableViewController.swift */,
+				2732E0592005551400C047ED /* CoinDataViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				275851C61FEDDE2D0032B748 /* CurrencyTableViewController.swift in Sources */,
 				275851C41FEDDDE40032B748 /* ContainerViewController.swift in Sources */,
 				2732E0572004264000C047ED /* SliderTableViewCell.swift in Sources */,
+				2732E05A2005551400C047ED /* CoinDataViewController.swift in Sources */,
 				27ED56D82000253F008D02EA /* SettingsTableViewController.swift in Sources */,
 				275851CA1FEDFD740032B748 /* CurrencyDataFetcher.swift in Sources */,
 				275851C81FEDDE5A0032B748 /* CoinTableViewCell.swift in Sources */,

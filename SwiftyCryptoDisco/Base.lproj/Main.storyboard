@@ -210,7 +210,8 @@
                             <barButtonItem id="FsW-BA-4z8">
                                 <color key="tintColor" name="fluoGreen"/>
                             </barButtonItem>
-                            <barButtonItem title="Settings" id="CAe-5t-CmW">
+                            <barButtonItem image="settings" id="CAe-5t-CmW">
+                                <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <segue destination="adT-XA-i4V" kind="show" id="BUA-Ws-f7C"/>
                                 </connections>
@@ -219,11 +220,39 @@
                     </navigationItem>
                     <connections>
                         <segue destination="4Tc-rL-ZWu" kind="show" identifier="addVC" id="QIg-2x-ozW"/>
+                        <segue destination="dqU-Yo-0Jp" kind="show" id="qB1-xW-uIw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rk6-ig-KB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1921" y="132"/>
+        </scene>
+        <!--Coin Data-->
+        <scene sceneID="JXr-51-ZHR">
+            <objects>
+                <viewController storyboardIdentifier="coinDataVC" title="Coin Data" id="dqU-Yo-0Jp" customClass="CoinDataViewController" customModule="SwiftyCryptoDisco" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LCJ-vi-afL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="677"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page Under Construction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZO-CP-10U">
+                                <rect key="frame" x="110" y="386.66666666666669" width="194" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zZO-CP-10U" firstAttribute="centerY" secondItem="A1t-Nc-hbM" secondAttribute="centerY" id="Bcr-m9-Orv"/>
+                            <constraint firstItem="zZO-CP-10U" firstAttribute="centerX" secondItem="A1t-Nc-hbM" secondAttribute="centerX" id="R2T-sY-33f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="A1t-Nc-hbM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I5J-oh-qsy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2792.753623188406" y="131.65760869565219"/>
         </scene>
         <!--Settings-->
         <scene sceneID="R1U-xD-CcG">
@@ -244,7 +273,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Yp-8F-iNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2793" y="-482"/>
+            <point key="canvasLocation" x="2793" y="-535"/>
         </scene>
         <!--Add Currency-->
         <scene sceneID="R4z-yY-uXg">
@@ -380,7 +409,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYQ-kV-aNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2794" y="133"/>
+            <point key="canvasLocation" x="2793" y="797"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gAe-1l-yI5">
@@ -409,6 +438,7 @@
     </scenes>
     <resources>
         <image name="arrow" width="12" height="8"/>
+        <image name="settings" width="56" height="58"/>
         <namedColor name="flatBlue">
             <color red="0.20399999620000001" green="0.59600001570000005" blue="0.85900002720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

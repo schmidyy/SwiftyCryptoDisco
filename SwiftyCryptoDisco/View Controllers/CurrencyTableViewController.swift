@@ -77,8 +77,12 @@ class CurrencyTableViewController: UITableViewController, AddCoinDelegate {
             //TODO: add watch functionality
         }
         watchAction.backgroundColor = UIColor(named: "flatBlue")
-        
         return [deleteAction, watchAction]
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let coinDataVC = storyboard?.instantiateViewController(withIdentifier: "coinDataVC") as! CoinDataViewController
+        navigationController?.pushViewController(coinDataVC, animated: true)
     }
     
     //MARK: - Class methods

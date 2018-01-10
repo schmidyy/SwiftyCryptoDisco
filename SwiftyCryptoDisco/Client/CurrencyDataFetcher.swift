@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class CurrencyDataFetcher {
     
-    // Coin data provided by CoinMarketCap
+    // RESTful Coin data API provided by CoinMarketCap
     // See documentation at https://coinmarketcap.com/api/
     
     func getDataForCurrency(currency: String, completion: @escaping(_ coin: Currency?) -> Void) {

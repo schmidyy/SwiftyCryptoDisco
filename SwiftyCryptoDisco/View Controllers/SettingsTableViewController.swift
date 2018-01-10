@@ -92,6 +92,7 @@ class SettingsTableViewController: UITableViewController {
             if cell.accessoryType == .none {
                 resetChecks(forSection: 0)
                 cell.accessoryType = .checkmark
+                cell.tintColor = UIColor(named: "fluoGreen")
                 baseCurrency = BaseCurrency.allValues[indexPath.row]
                 defaults.set(baseCurrency?.rawValue, forKey: kBaseCurrencyKey)
             }
