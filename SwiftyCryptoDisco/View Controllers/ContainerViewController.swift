@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 let defaults = UserDefaults.standard
 
@@ -23,7 +22,6 @@ class ContainerViewController: UIViewController, CurrencyTableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         addCoinButton.layer.cornerRadius = addCoinButton.frame.width / 2
-
         refreshDate()
     }
     

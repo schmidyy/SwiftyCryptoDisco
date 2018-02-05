@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -211,7 +211,7 @@
                                 <color key="tintColor" name="fluoGreen"/>
                             </barButtonItem>
                             <barButtonItem image="settings" id="CAe-5t-CmW">
-                                <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <segue destination="adT-XA-i4V" kind="show" id="BUA-Ws-f7C"/>
                                 </connections>
@@ -234,19 +234,7 @@
                     <view key="view" contentMode="scaleToFill" id="LCJ-vi-afL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="677"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page Under Construction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZO-CP-10U">
-                                <rect key="frame" x="110" y="386.66666666666669" width="194" height="20"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="zZO-CP-10U" firstAttribute="centerY" secondItem="A1t-Nc-hbM" secondAttribute="centerY" id="Bcr-m9-Orv"/>
-                            <constraint firstItem="zZO-CP-10U" firstAttribute="centerX" secondItem="A1t-Nc-hbM" secondAttribute="centerX" id="R2T-sY-33f"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="A1t-Nc-hbM"/>
                     </view>
                 </viewController>

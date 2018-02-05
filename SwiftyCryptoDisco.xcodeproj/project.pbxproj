@@ -20,6 +20,9 @@
 		275851CA1FEDFD740032B748 /* CurrencyDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275851C91FEDFD740032B748 /* CurrencyDataFetcher.swift */; };
 		275851CD1FEEEE250032B748 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275851CC1FEEEE250032B748 /* Currency.swift */; };
 		275851CF1FF009720032B748 /* AddCoinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275851CE1FF009720032B748 /* AddCoinTableViewController.swift */; };
+		27E6A8C9201A471B0053C1C9 /* MarketExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E6A8C8201A471B0053C1C9 /* MarketExchange.swift */; };
+		27E6A8CB201A533E0053C1C9 /* MarketDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E6A8CA201A533E0053C1C9 /* MarketDataFetcher.swift */; };
+		27E6A8CD201ABF520053C1C9 /* OHLCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E6A8CC201ABF520053C1C9 /* OHLCV.swift */; };
 		27ED56D82000253F008D02EA /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ED56D72000253F008D02EA /* SettingsTableViewController.swift */; };
 		89C6C343FE592743E2122237 /* Pods_SwiftyCryptoDisco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6BB04DCE507464BC286AA5 /* Pods_SwiftyCryptoDisco.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +43,9 @@
 		275851C91FEDFD740032B748 /* CurrencyDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDataFetcher.swift; sourceTree = "<group>"; };
 		275851CC1FEEEE250032B748 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		275851CE1FF009720032B748 /* AddCoinTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinTableViewController.swift; sourceTree = "<group>"; };
+		27E6A8C8201A471B0053C1C9 /* MarketExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketExchange.swift; sourceTree = "<group>"; };
+		27E6A8CA201A533E0053C1C9 /* MarketDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataFetcher.swift; sourceTree = "<group>"; };
+		27E6A8CC201ABF520053C1C9 /* OHLCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OHLCV.swift; sourceTree = "<group>"; };
 		27ED56D72000253F008D02EA /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		4A6BB04DCE507464BC286AA5 /* Pods_SwiftyCryptoDisco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyCryptoDisco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		601EADDE0391DEB2C842348E /* Pods-SwiftyCryptoDisco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCryptoDisco.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCryptoDisco/Pods-SwiftyCryptoDisco.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				275851C91FEDFD740032B748 /* CurrencyDataFetcher.swift */,
+				27E6A8CA201A533E0053C1C9 /* MarketDataFetcher.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -143,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				275851CC1FEEEE250032B748 /* Currency.swift */,
+				27E6A8C8201A471B0053C1C9 /* MarketExchange.swift */,
+				27E6A8CC201ABF520053C1C9 /* OHLCV.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -268,11 +277,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCryptoDisco/Pods-SwiftyCryptoDisco-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftCharts/SwiftCharts.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCharts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,8 +300,11 @@
 			files = (
 				275851CF1FF009720032B748 /* AddCoinTableViewController.swift in Sources */,
 				275851CD1FEEEE250032B748 /* Currency.swift in Sources */,
+				27E6A8CD201ABF520053C1C9 /* OHLCV.swift in Sources */,
+				27E6A8C9201A471B0053C1C9 /* MarketExchange.swift in Sources */,
 				275851C61FEDDE2D0032B748 /* CurrencyTableViewController.swift in Sources */,
 				275851C41FEDDDE40032B748 /* ContainerViewController.swift in Sources */,
+				27E6A8CB201A533E0053C1C9 /* MarketDataFetcher.swift in Sources */,
 				2732E0572004264000C047ED /* SliderTableViewCell.swift in Sources */,
 				2732E05A2005551400C047ED /* CoinDataViewController.swift in Sources */,
 				27ED56D82000253F008D02EA /* SettingsTableViewController.swift in Sources */,

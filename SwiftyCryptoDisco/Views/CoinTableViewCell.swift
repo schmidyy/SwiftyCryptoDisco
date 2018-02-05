@@ -19,6 +19,7 @@ class CoinTableViewCell: UITableViewCell {
     @IBOutlet weak var currencyDotSeperatorLabel: UILabel!
     @IBOutlet weak var currenceConversionLabel: UILabel!
     
+    var coinSymbol: String?
     var baseCurrency: BaseCurrency?
     
     func formatCellFor(currencyName: String) {
@@ -29,12 +30,12 @@ class CoinTableViewCell: UITableViewCell {
                 print("Unable to get data for currency: \(currencyName)")
                 return
             }
-            
             self.currencyNameLabel.text = coin.name
             self.currencyRankLabel.text = "\(coin.rank)"
             self.currency24hrChangeLabel.text = String(format: "%0.2f%%", coin.percentChangeDaily)
             self.getBaseCurrency(coin: coin)
-                
+            self.coinSymbol = coin.symbol
+            
             if coin.percentChangeDaily >= 0 {
                 DispatchQueue.main.async {
                     self.currency24hrChangeLabel.textColor = UIColor(named: "fluoGreen")
@@ -43,7 +44,6 @@ class CoinTableViewCell: UITableViewCell {
                     self.currencyArrowImageView.transform = CGAffineTransform(scaleX: 1, y: -1)
                 }
             }
-            
         }
     }
     

@@ -23,6 +23,7 @@ class SettingsTableViewController: UITableViewController {
     let NUM_SECTIONS = 2
     let NUM_ROWS_BASECURRENCY_SECTION = BaseCurrency.allValues.count
     let NUM_ROWS_SLIDER_SECTION = 1
+    
     var baseCurrency: BaseCurrency?
     var searchableCurrencies: Int?
     

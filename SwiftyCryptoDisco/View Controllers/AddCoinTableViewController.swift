@@ -70,8 +70,8 @@ class AddCoinTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let coinID = isSearching ? filteredCoins![indexPath.row].id : coins![indexPath.row].id
-        delegate?.didTapCoinWithID(id: coinID)
+        let coin = isSearching ? filteredCoins![indexPath.row] : coins![indexPath.row]
+        delegate?.didTapCoinWithID(id: coin.id)
         navigationController?.popToRootViewController(animated: true)
     }
     

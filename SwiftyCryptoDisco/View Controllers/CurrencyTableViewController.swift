@@ -34,11 +34,11 @@ class CurrencyTableViewController: UITableViewController, AddCoinDelegate {
         }
     }
     
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tableView.reloadData()
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addVC" {
             addCoinVC = segue.destination as! AddCoinTableViewController
@@ -82,24 +82,12 @@ class CurrencyTableViewController: UITableViewController, AddCoinDelegate {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let coinDataVC = storyboard?.instantiateViewController(withIdentifier: "coinDataVC") as! CoinDataViewController
+        let cell = tableView.cellForRow(at: indexPath) as! CoinTableViewCell
+        coinDataVC.coinSymbol = cell.coinSymbol!
         navigationController?.pushViewController(coinDataVC, animated: true)
     }
     
     //MARK: - Class methods
-    func fetchDefaultCurrencyData() {
-        var localDefaultCoins: [Currency] = []
-        let dataFetcher = CurrencyDataFetcher()
-        for currencyID in defaultCurrencies! {
-            dataFetcher.getDataForCurrency(currency: currencyID, completion: { (fetchedCurrency) in
-                guard let newCurrency = fetchedCurrency else {
-                    print("Error: Unable to fetch default currency data.")
-                    return
-                }
-                localDefaultCoins.append(newCurrency)
-            })
-        }
-    }
-    
     func setupRefreshController() {
         refreshController = UIRefreshControl()
         refreshController?.tintColor = UIColor(named: "flatBlue")

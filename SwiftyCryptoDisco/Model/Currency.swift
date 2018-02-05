@@ -9,7 +9,8 @@
 import Foundation
 import SwiftyJSON
 
-struct Currency {
+struct Currency: Equatable {
+    
     var id                  : String
     var name                : String
     var symbol              : String
@@ -44,5 +45,9 @@ struct Currency {
         self.percentChangeDaily     = currencyDictionary["percent_change_24h"].doubleValue
         self.percentChangeWeekly    = currencyDictionary["percent_change_7d"].doubleValue
         self.lastUpdated            = currencyDictionary["last_updated"].doubleValue as TimeInterval
+    }
+    
+    static func ==(lhs: Currency, rhs: Currency) -> Bool {
+        return lhs.id == rhs.id
     }
 }
