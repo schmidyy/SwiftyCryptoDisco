@@ -10,6 +10,8 @@
 		2732E0572004264000C047ED /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2732E0552004264000C047ED /* SliderTableViewCell.swift */; };
 		2732E0582004264000C047ED /* SliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2732E0562004264000C047ED /* SliderTableViewCell.xib */; };
 		2732E05A2005551400C047ED /* CoinDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2732E0592005551400C047ED /* CoinDataViewController.swift */; };
+		2747FB5A202A82DE00B447DE /* GlobalsEnumsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747FB59202A82DE00B447DE /* GlobalsEnumsExtensions.swift */; };
+		274B9F59202A0A90000FCA2A /* OHLCVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B9F58202A0A90000FCA2A /* OHLCVTableViewCell.swift */; };
 		275851B21FEDC7B20032B748 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275851B11FEDC7B20032B748 /* AppDelegate.swift */; };
 		275851B71FEDC7B20032B748 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 275851B51FEDC7B20032B748 /* Main.storyboard */; };
 		275851B91FEDC7B20032B748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275851B81FEDC7B20032B748 /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 		2732E0552004264000C047ED /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
 		2732E0562004264000C047ED /* SliderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderTableViewCell.xib; sourceTree = "<group>"; };
 		2732E0592005551400C047ED /* CoinDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataViewController.swift; sourceTree = "<group>"; };
+		2747FB59202A82DE00B447DE /* GlobalsEnumsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalsEnumsExtensions.swift; sourceTree = "<group>"; };
+		274B9F58202A0A90000FCA2A /* OHLCVTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OHLCVTableViewCell.swift; sourceTree = "<group>"; };
 		275851AE1FEDC7B20032B748 /* SwiftyCryptoDisco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyCryptoDisco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		275851B11FEDC7B20032B748 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		275851B61FEDC7B20032B748 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -98,7 +102,6 @@
 				275852011FFBD7300032B748 /* Views */,
 				275852021FFBD73A0032B748 /* Client */,
 				275852031FFBD74D0032B748 /* Model */,
-				275851B51FEDC7B20032B748 /* Main.storyboard */,
 				275851B11FEDC7B20032B748 /* AppDelegate.swift */,
 				275851BD1FEDC7B20032B748 /* Info.plist */,
 				275851CB1FEE13820032B748 /* Supporting Files */,
@@ -109,6 +112,7 @@
 		275851CB1FEE13820032B748 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2747FB59202A82DE00B447DE /* GlobalsEnumsExtensions.swift */,
 				275851B81FEDC7B20032B748 /* Assets.xcassets */,
 				275851BA1FEDC7B20032B748 /* LaunchScreen.storyboard */,
 			);
@@ -130,7 +134,9 @@
 		275852011FFBD7300032B748 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				275851B51FEDC7B20032B748 /* Main.storyboard */,
 				275851C71FEDDE5A0032B748 /* CoinTableViewCell.swift */,
+				274B9F58202A0A90000FCA2A /* OHLCVTableViewCell.swift */,
 				2732E0552004264000C047ED /* SliderTableViewCell.swift */,
 				2732E0562004264000C047ED /* SliderTableViewCell.xib */,
 			);
@@ -299,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				275851CF1FF009720032B748 /* AddCoinTableViewController.swift in Sources */,
+				2747FB5A202A82DE00B447DE /* GlobalsEnumsExtensions.swift in Sources */,
 				275851CD1FEEEE250032B748 /* Currency.swift in Sources */,
 				27E6A8CD201ABF520053C1C9 /* OHLCV.swift in Sources */,
 				27E6A8C9201A471B0053C1C9 /* MarketExchange.swift in Sources */,
@@ -310,6 +317,7 @@
 				27ED56D82000253F008D02EA /* SettingsTableViewController.swift in Sources */,
 				275851CA1FEDFD740032B748 /* CurrencyDataFetcher.swift in Sources */,
 				275851C81FEDDE5A0032B748 /* CoinTableViewCell.swift in Sources */,
+				274B9F59202A0A90000FCA2A /* OHLCVTableViewCell.swift in Sources */,
 				275851B21FEDC7B20032B748 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

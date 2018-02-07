@@ -36,6 +36,7 @@ class CurrencyTableViewController: UITableViewController, AddCoinDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        delegate?.didTapRefreshButton()
         tableView.reloadData()
     }
     
@@ -84,6 +85,7 @@ class CurrencyTableViewController: UITableViewController, AddCoinDelegate {
         let coinDataVC = storyboard?.instantiateViewController(withIdentifier: "coinDataVC") as! CoinDataViewController
         let cell = tableView.cellForRow(at: indexPath) as! CoinTableViewCell
         coinDataVC.coinSymbol = cell.coinSymbol!
+        coinDataVC.coinName = cell.coinName!
         navigationController?.pushViewController(coinDataVC, animated: true)
     }
     
@@ -93,7 +95,6 @@ class CurrencyTableViewController: UITableViewController, AddCoinDelegate {
         refreshController?.tintColor = UIColor(named: "flatBlue")
         refreshController?.addTarget(self, action: #selector(handleRefresh(_:)), for: UIControlEvents.valueChanged)
         
-        // Add Refresh Control to Table View
         if #available(iOS 10.0, *) {
             tableView.refreshControl = refreshController
         } else {

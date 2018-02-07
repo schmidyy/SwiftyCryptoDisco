@@ -8,15 +8,15 @@
 
 import UIKit
 
+let kBaseCurrencyKey = "BaseCurrency"
+let kSearchableCurrenciesKey = "SearchableCurrencies"
+
 enum BaseCurrency: String {
     case BTC = "BTC"
     case USD = "USD"
     case CAD = "CAD"
     static let allValues = [BTC, USD, CAD]
 }
-
-let kBaseCurrencyKey = "BaseCurrency"
-let kSearchableCurrenciesKey = "SearchableCurrencies"
 
 class SettingsTableViewController: UITableViewController {
     

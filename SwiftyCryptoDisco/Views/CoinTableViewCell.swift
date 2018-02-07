@@ -20,6 +20,7 @@ class CoinTableViewCell: UITableViewCell {
     @IBOutlet weak var currenceConversionLabel: UILabel!
     
     var coinSymbol: String?
+    var coinName : String?
     var baseCurrency: BaseCurrency?
     
     func formatCellFor(currencyName: String) {
@@ -35,6 +36,7 @@ class CoinTableViewCell: UITableViewCell {
             self.currency24hrChangeLabel.text = String(format: "%0.2f%%", coin.percentChangeDaily)
             self.getBaseCurrency(coin: coin)
             self.coinSymbol = coin.symbol
+            self.coinName = coin.name
             
             if coin.percentChangeDaily >= 0 {
                 DispatchQueue.main.async {
@@ -82,14 +84,5 @@ class CoinTableViewCell: UITableViewCell {
             self.currencyPriceLabel.text = "\(coin.priceBTC)"
             self.currenceConversionLabel.text = coin.symbol + "/BTC"
         }
-    }
-}
-
-private extension NSNumber {
-    var formattedCurrencyString: String? {
-        let formatter = NumberFormatter()
-        formatter.locale = Locale(identifier: "en_US")
-        formatter.numberStyle = .currency
-        return formatter.string(from: self)
     }
 }

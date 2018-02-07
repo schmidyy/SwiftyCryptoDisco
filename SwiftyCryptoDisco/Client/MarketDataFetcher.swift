@@ -9,16 +9,6 @@
 import Alamofire
 import SwiftyJSON
 
-enum Period: String {
-    case ONEHOUR = "1HRS"
-    case TWELVEHOURS = "12HRS"
-    case ONEDAY = "1DAY"
-    case ONEWEEK = "12DAY"
-    case ONEMONTH = "1MTH"
-    case ONEYEAR = "1YRS"
-    static let allValues = [ONEHOUR, TWELVEHOURS, ONEDAY, ONEWEEK, ONEMONTH, ONEYEAR]
-}
-
 class MarketDataFetcher {
     
     // RESTful Market data provided by CoinAPI

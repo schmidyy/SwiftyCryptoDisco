@@ -15,6 +15,7 @@ struct OHLCV {
     var priceHigh       : NSNumber
     var priceLow        : NSNumber
     var priceClose      : NSNumber
+    var volume          : NSNumber
     
     init(withDictionary ohlcvDictionary: JSON) {
         self.timePeriodStart = ohlcvDictionary["time_period_start"].stringValue
@@ -22,5 +23,6 @@ struct OHLCV {
         self.priceHigh       = ohlcvDictionary["price_high"].numberValue
         self.priceLow        = ohlcvDictionary["price_low"].numberValue
         self.priceClose      = ohlcvDictionary["price_close"].numberValue
+        self.volume          = ohlcvDictionary["volume_traded"].numberValue
     }
 }

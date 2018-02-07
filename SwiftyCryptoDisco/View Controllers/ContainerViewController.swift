@@ -8,9 +8,7 @@
 
 import UIKit
 
-let defaults = UserDefaults.standard
-
-class ContainerViewController: UIViewController, CurrencyTableViewDelegate {
+class ContainerViewController: UIViewController, UINavigationControllerDelegate , CurrencyTableViewDelegate {
 
     @IBOutlet weak var refreshDateLabel: UILabel!
     @IBOutlet weak var addCoinButton: UIButton!
@@ -28,6 +26,7 @@ class ContainerViewController: UIViewController, CurrencyTableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CryptoVC" {
             mainNavigationController = segue.destination as! UINavigationController
+            mainNavigationController.delegate = self
             currencyTableViewController = mainNavigationController.childViewControllers.first as! CurrencyTableViewController!
             currencyTableViewController.delegate = self
         }
@@ -57,5 +56,15 @@ class ContainerViewController: UIViewController, CurrencyTableViewDelegate {
     // MARK: - CurrencyTableViewDelegate
     func didTapRefreshButton() {
         refreshDate()
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        if let title = viewController.title {
+            if title != "Crypto Disco" {
+                addCoinButton.isHidden = true
+            } else {
+                addCoinButton.isHidden = false
+            }
+        }
     }
 }
