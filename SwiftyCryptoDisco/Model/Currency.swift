@@ -11,22 +11,22 @@ import SwiftyJSON
 
 struct Currency: Equatable {
     
-    var id                  : String
-    var name                : String
-    var symbol              : String
-    var rank                : Int
-    var priceUSD            : NSNumber
-    var priceBTC            : Double
-    var priceCAD            : NSNumber?
-    var dailyVolume         : Double
-    var marketCapUSD        : Double
-    var availableSupply     : Double
-    var totalSupply         : Double
-    var maxSupply           : Double?
-    var percentChangeHourly : Double
-    var percentChangeDaily  : Double
-    var percentChangeWeekly : Double
-    var lastUpdated         : TimeInterval
+    let id                  : String
+    let name                : String
+    let symbol              : String
+    let rank                : Int
+    let priceUSD            : NSNumber
+    let priceBTC            : Double
+    let priceCAD            : NSNumber?
+    let dailyVolume         : Double
+    let marketCapUSD        : Double
+    let availableSupply     : Double
+    let totalSupply         : Double
+    let maxSupply           : Double?
+    let percentChangeHourly : Double
+    let percentChangeDaily  : Double
+    let percentChangeWeekly : Double
+    let lastUpdated         : TimeInterval
     
     init(withDictionary currencyDictionary: JSON) {
         self.id                     = currencyDictionary["id"].stringValue

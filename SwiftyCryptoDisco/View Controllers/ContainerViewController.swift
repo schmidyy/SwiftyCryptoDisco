@@ -53,11 +53,12 @@ class ContainerViewController: UIViewController, UINavigationControllerDelegate 
         mainNavigationController.pushViewController(addCoinVC, animated: true)
     }
     
-    // MARK: - CurrencyTableViewDelegate
+    //MARK: - CurrencyTableViewDelegate
     func didTapRefreshButton() {
         refreshDate()
     }
     
+    //MARK: - UINavigationControllerDelegate
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         if let title = viewController.title {
             if title != "Crypto Disco" {

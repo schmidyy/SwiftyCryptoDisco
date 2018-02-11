@@ -39,8 +39,8 @@ class AddCoinTableViewController: UITableViewController, UISearchBarDelegate {
             guard let coinArray = coinArray else {
                 return
             }
-            //let sortedCoins = coinArray.sorted { $0.name < $1.name }
-            self.coins = /*sortedCoins*/ coinArray
+            let sortedCoins = coinArray.sorted { $0.name < $1.name }
+            self.coins = sortedCoins
             self.activityIndicator.stopAnimating()
             self.tableView.reloadData()
         }
@@ -64,7 +64,7 @@ class AddCoinTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: kCoinCellReuseIdentifier) as! CoinTableViewCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: kCoinCellReuseIdentifier, for: indexPath) as! CoinTableViewCell
         cell.formatCellFor(coin: (isSearching) ? filteredCoins![indexPath.row] : coins![indexPath.row])
         return cell
     }

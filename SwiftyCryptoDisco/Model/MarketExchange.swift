@@ -10,10 +10,10 @@ import Foundation
 import SwiftyJSON
 
 struct MarketExchange {
-    var symbolID        : String
-    var exchangeID      : String
-    var baseCurrencyID  : String
-    var quoteCurrencyID : String
+    let symbolID        : String
+    let exchangeID      : String
+    let baseCurrencyID  : String
+    let quoteCurrencyID : String
     
     init(withDictionary marketDictionary: JSON) {
         self.symbolID        = marketDictionary["symbol_id"].stringValue

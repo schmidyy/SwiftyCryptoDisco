@@ -18,6 +18,10 @@ enum BaseCurrency: String {
     static let allValues = [BTC, USD, CAD]
 }
 
+protocol SettingsDelegate: class {
+    func didChangeDefaultCurrency()
+}
+
 class SettingsTableViewController: UITableViewController {
     
     let NUM_SECTIONS = 2
@@ -26,6 +30,7 @@ class SettingsTableViewController: UITableViewController {
     
     var baseCurrency: BaseCurrency?
     var searchableCurrencies: Int?
+    var delegate: SettingsDelegate?
     
     let sliderCellID = "SliderCell"
     
@@ -81,21 +86,24 @@ class SettingsTableViewController: UITableViewController {
                 getUserSearchableCurrencies()
             }
             cell.delegate = self
+            cell.selectionStyle = .none
             cell.numSearchableCoinsSlider.value = Float(searchableCurrencies!)
             cell.numSearchableCoinsLabel.text = "TOP \(searchableCurrencies!)"
             return cell
         }
     }
     
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let cell = tableView.cellForRow(at: indexPath) {
-            if cell.accessoryType == .none {
+            if cell.accessoryType == .none, indexPath.section == 0 {
                 resetChecks(forSection: 0)
                 cell.accessoryType = .checkmark
                 cell.tintColor = UIColor(named: "fluoGreen")
                 baseCurrency = BaseCurrency.allValues[indexPath.row]
                 defaults.set(baseCurrency?.rawValue, forKey: kBaseCurrencyKey)
+                delegate?.didChangeDefaultCurrency()
             }
         }
     }

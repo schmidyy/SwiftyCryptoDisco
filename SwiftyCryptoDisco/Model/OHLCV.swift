@@ -10,12 +10,12 @@ import Foundation
 import SwiftyJSON
 
 struct OHLCV {
-    var timePeriodStart : String
-    var priceOpen       : NSNumber
-    var priceHigh       : NSNumber
-    var priceLow        : NSNumber
-    var priceClose      : NSNumber
-    var volume          : NSNumber
+    let timePeriodStart : String
+    let priceOpen       : NSNumber
+    let priceHigh       : NSNumber
+    let priceLow        : NSNumber
+    let priceClose      : NSNumber
+    let volume          : NSNumber
     
     init(withDictionary ohlcvDictionary: JSON) {
         self.timePeriodStart = ohlcvDictionary["time_period_start"].stringValue

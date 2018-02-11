@@ -23,12 +23,13 @@ class MarketDataFetcher {
         Alamofire.request("https://rest.coinapi.io/v1/symbols/", headers: header).responseJSON { (response) in
             if let data = response.data {
                 let json = JSON(data)
+                print(json)
                 var marketArray: [MarketExchange] = []
                 for subJson in json {
                     if subJson.1["asset_id_base"].stringValue == baseCurrency {
-                        print(subJson.1)
                         let marketExchange = MarketExchange(withDictionary: subJson.1)
                         marketArray.append(marketExchange)
+                        break
                     }
                 }
                 completion(marketArray)

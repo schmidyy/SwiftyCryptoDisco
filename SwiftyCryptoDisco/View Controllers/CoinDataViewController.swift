@@ -30,8 +30,24 @@ class CoinDataViewController: UIViewController {
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavBarTitle()
         
+        setupNavBarTitle()
+        setupUIElementsAndProperties()
+        receiveMarketDataForSymbol(coinSymbol: coinSymbol!)
+    }
+    
+    //MARK: - Setup methods
+    func setupNavBarTitle() {
+        var baseCurrency: BaseCurrency
+        if let fetchedBaseCurrency = defaults.object(forKey: kBaseCurrencyKey) {
+            baseCurrency = BaseCurrency(rawValue: (fetchedBaseCurrency as? String)!)!
+        } else {
+            baseCurrency = BaseCurrency.CAD
+        }
+        self.title = "\(coinSymbol!)/\(baseCurrency.rawValue)"
+    }
+    
+    func setupUIElementsAndProperties() {
         activityIndicator.hidesWhenStopped = true
         activityIndicator.center = CGPoint(x: view.frame.width / 2, y: view.frame.height / 2 - 78)
         self.view.addSubview(activityIndicator)
@@ -47,26 +63,7 @@ class CoinDataViewController: UIViewController {
         coinTableView.delegate = self
         coinTableView.isScrollEnabled = false
         selectedTimeSpan = Period.ONEDAY
-        //selectedTimeSpanView.centerXAnchor.constraint(equalTo: (timeSpanStackView.arrangedSubviews[0] as! UIButton).centerXAnchor).isActive = true
-        setViewsToHidden(hidden: true)
-        
-        receiveMarketDataForSymbol(coinSymbol: coinSymbol!)
-    }
-    
-    //MARK: - Setup methods
-    func setupNavBarTitle() {
-        var baseCurrency: BaseCurrency
-        if let fetchedBaseCurrency = defaults.object(forKey: kBaseCurrencyKey) {
-            baseCurrency = BaseCurrency(rawValue: (fetchedBaseCurrency as? String)!)!
-        } else {
-            baseCurrency = BaseCurrency.CAD
-        }
-        self.title = "\(coinSymbol!)/\(baseCurrency.rawValue)"
-    }
-    
-    func setViewsToHidden(hidden: Bool) {
-        self.ohlcvTableView.isHidden = hidden
-        self.coinTableView.isHidden = hidden
+        self.ohlcvTableView.isHidden = true
     }
     
     //MARK: - Data Retrieval
@@ -105,17 +102,19 @@ class CoinDataViewController: UIViewController {
             self.activityIndicator.stopAnimating()
             self.ohlcvTableView.reloadData()
             self.coinTableView.reloadData()
-            self.setViewsToHidden(hidden: false)
+            self.ohlcvTableView.isHidden = false
         }
     }
     
     //MARK: - Event Handlers
     @IBAction func didTapTimeSpanButton(_ sender: UIButton) {
-        selectedTimeSpanXConstraint.isActive = false
-        selectedTimeSpanXConstraint = selectedTimeSpanView.centerXAnchor.constraint(equalTo: (timeSpanStackView.viewWithTag(sender.tag) as! UIButton).centerXAnchor)
-        selectedTimeSpanXConstraint.isActive = true
-        UIView.animate(withDuration: 0.5) {
-            self.view.layoutIfNeeded()
+        DispatchQueue.main.async {
+            self.selectedTimeSpanXConstraint.isActive = false
+            self.selectedTimeSpanXConstraint = self.selectedTimeSpanView.centerXAnchor.constraint(equalTo: (self.timeSpanStackView.viewWithTag(sender.tag) as! UIButton).centerXAnchor)
+            self.selectedTimeSpanXConstraint.isActive = true
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutIfNeeded()
+            }
         }
         selectedTimeSpan = Period.allValues[sender.tag - 1]
         ohlcvTableView.isHidden = true

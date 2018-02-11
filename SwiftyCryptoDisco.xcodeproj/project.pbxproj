@@ -102,9 +102,9 @@
 				275852011FFBD7300032B748 /* Views */,
 				275852021FFBD73A0032B748 /* Client */,
 				275852031FFBD74D0032B748 /* Model */,
+				275851CB1FEE13820032B748 /* Supporting Files */,
 				275851B11FEDC7B20032B748 /* AppDelegate.swift */,
 				275851BD1FEDC7B20032B748 /* Info.plist */,
-				275851CB1FEE13820032B748 /* Supporting Files */,
 			);
 			path = SwiftyCryptoDisco;
 			sourceTree = "<group>";
@@ -283,13 +283,11 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCryptoDisco/Pods-SwiftyCryptoDisco-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftCharts/SwiftCharts.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCharts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
