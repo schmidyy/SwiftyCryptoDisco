@@ -10,15 +10,6 @@ import UIKit
 
 class CoinDataViewController: UIViewController {
     
-    let kOHLCVCellReuseIdentifier = "OHLCVCell"
-    let kCoinCellReuseIdentifier = "CoinCell"
-    var coinSymbol: String?
-    var coinName: String?
-    var availableMarkets: [MarketExchange]?
-    var currentOHLCVValues: [OHLCV]?
-    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
-    var selectedTimeSpan: Period?
-    
     @IBOutlet weak var ohlcvTableView: UITableView!
     @IBOutlet weak var coinTableView: UITableView!
     @IBOutlet weak var sellButton: UIButton!
@@ -26,6 +17,16 @@ class CoinDataViewController: UIViewController {
     @IBOutlet weak var timeSpanStackView: UIStackView!
     @IBOutlet weak var selectedTimeSpanView: UIView!
     @IBOutlet weak var selectedTimeSpanXConstraint: NSLayoutConstraint!
+    
+    let kOHLCVCellReuseIdentifier = "OHLCVCell"
+    let kCoinCellReuseIdentifier = "CoinCell"
+    var coinSymbol: String?
+    var coinName: String?
+    var baseCurrency: BaseCurrency?
+    var currentMarket: MarketExchange?
+    var currentOHLCVValues: [OHLCV]?
+    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+    var selectedTimeSpan: Period?
     
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -38,13 +39,12 @@ class CoinDataViewController: UIViewController {
     
     //MARK: - Setup methods
     func setupNavBarTitle() {
-        var baseCurrency: BaseCurrency
         if let fetchedBaseCurrency = defaults.object(forKey: kBaseCurrencyKey) {
             baseCurrency = BaseCurrency(rawValue: (fetchedBaseCurrency as? String)!)!
         } else {
             baseCurrency = BaseCurrency.CAD
         }
-        self.title = "\(coinSymbol!)/\(baseCurrency.rawValue)"
+        self.title = "\(coinSymbol!)/\(baseCurrency!.rawValue)"
     }
     
     func setupUIElementsAndProperties() {
@@ -62,6 +62,7 @@ class CoinDataViewController: UIViewController {
         coinTableView.dataSource = self
         coinTableView.delegate = self
         coinTableView.isScrollEnabled = false
+        
         selectedTimeSpan = Period.ONEDAY
         self.ohlcvTableView.isHidden = true
     }
@@ -69,7 +70,7 @@ class CoinDataViewController: UIViewController {
     //MARK: - Data Retrieval
     func receiveMarketDataForSymbol(coinSymbol: String) {
         let marketDataFetcher = MarketDataFetcher()
-        marketDataFetcher.getMarketDataForBaseCurrency(baseCurrency: coinSymbol) { (markets) in
+        marketDataFetcher.getMarketDataForBaseCurrency(coinCurrency: coinSymbol, baseCurrency: baseCurrency!.rawValue) { (markets) in
             guard let marketsForCoin = markets, marketsForCoin.count > 0 else {
                 let alert = UIAlertController(title: "Error", message: "No exchanges available for currency \(self.coinSymbol!)", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "Okay", style: .default, handler: { (action) in
@@ -80,8 +81,8 @@ class CoinDataViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
                 return
             }
-            self.availableMarkets = marketsForCoin
-            self.receiveOHLCVDataFromMarket(market: marketsForCoin[0])
+            self.currentMarket = marketsForCoin[0]
+            self.receiveOHLCVDataFromMarket(market: self.currentMarket!)
         }
     }
     
@@ -119,7 +120,7 @@ class CoinDataViewController: UIViewController {
         selectedTimeSpan = Period.allValues[sender.tag - 1]
         ohlcvTableView.isHidden = true
         activityIndicator.startAnimating()
-        receiveOHLCVDataFromMarket(market: availableMarkets![0])
+        receiveOHLCVDataFromMarket(market: currentMarket!)
     }
     
 }

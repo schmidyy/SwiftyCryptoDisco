@@ -26,6 +26,7 @@ class CurrencyTableViewController: UITableViewController, AddCoinDelegate, Setti
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRefreshController()
+        checkForConnection()
         
         if let userSavedCurrencies = defaults.value(forKey: kDefaultCurrencyNameArrayKey) {
             watchedCurrencies = userSavedCurrencies as? [String]
@@ -43,6 +44,33 @@ class CurrencyTableViewController: UITableViewController, AddCoinDelegate, Setti
             settingsVC = segue.destination as! SettingsTableViewController
             settingsVC.delegate = self
         }
+    }
+    
+    //MARK: - Class methods
+    func checkForConnection() {
+        tableView.isHidden = true
+        if ConnectionManager.isConnectedToInternet() {
+            tableView.isHidden = false
+        } else {
+            let alert = UIAlertController(title: "Error", message: "No internet connection detected. Please refresh the app when an internet connection is available.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func setupRefreshController() {
+        refreshController = UIRefreshControl()
+        refreshController?.tintColor = UIColor(named: "flatBlue")
+        refreshController?.addTarget(self, action: #selector(handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        tableView.refreshControl = refreshController
+    }
+    
+    func handleRefresh(_ sender: Any?) {
+        checkForConnection()
+        tableView.reloadData()
+        delegate?.didTapRefreshButton()
+        refreshController?.endRefreshing()
     }
 
     // MARK: - Table view data source & delegate
@@ -85,20 +113,6 @@ class CurrencyTableViewController: UITableViewController, AddCoinDelegate, Setti
         coinDataVC.coinSymbol = cell.coinSymbol!
         coinDataVC.coinName = cell.coinName!
         navigationController?.pushViewController(coinDataVC, animated: true)
-    }
-    
-    //MARK: - Class methods
-    func setupRefreshController() {
-        refreshController = UIRefreshControl()
-        refreshController?.tintColor = UIColor(named: "flatBlue")
-        refreshController?.addTarget(self, action: #selector(handleRefresh(_:)), for: UIControlEvents.valueChanged)
-        tableView.refreshControl = refreshController
-    }
-    
-    func handleRefresh(_ sender: Any?) {
-        tableView.reloadData()
-        delegate?.didTapRefreshButton()
-        refreshController?.endRefreshing()
     }
     
     //MARK: - AddCoinDelegate

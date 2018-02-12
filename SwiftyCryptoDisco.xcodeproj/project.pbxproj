@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27121E122030EFF500C97AF0 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27121E112030EFF400C97AF0 /* ConnectionManager.swift */; };
+		27121E1A2031FDE900C97AF0 /* SwiftyCryptoDiscoUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27121E192031FDE900C97AF0 /* SwiftyCryptoDiscoUnitTests.swift */; };
+		27121E252032023A00C97AF0 /* GlobalsEnumsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747FB59202A82DE00B447DE /* GlobalsEnumsExtensions.swift */; };
 		2732E0572004264000C047ED /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2732E0552004264000C047ED /* SliderTableViewCell.swift */; };
 		2732E0582004264000C047ED /* SliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2732E0562004264000C047ED /* SliderTableViewCell.xib */; };
 		2732E05A2005551400C047ED /* CoinDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2732E0592005551400C047ED /* CoinDataViewController.swift */; };
@@ -29,7 +32,22 @@
 		89C6C343FE592743E2122237 /* Pods_SwiftyCryptoDisco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6BB04DCE507464BC286AA5 /* Pods_SwiftyCryptoDisco.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		27121E1C2031FDE900C97AF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 275851A61FEDC7B10032B748 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 275851AD1FEDC7B20032B748;
+			remoteInfo = SwiftyCryptoDisco;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		27121E112030EFF400C97AF0 /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
+		27121E172031FDE900C97AF0 /* SwiftyCryptoDiscoUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyCryptoDiscoUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27121E192031FDE900C97AF0 /* SwiftyCryptoDiscoUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyCryptoDiscoUnitTests.swift; sourceTree = "<group>"; };
+		27121E1B2031FDE900C97AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27121E24203200E000C97AF0 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2732E0552004264000C047ED /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
 		2732E0562004264000C047ED /* SliderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderTableViewCell.xib; sourceTree = "<group>"; };
 		2732E0592005551400C047ED /* CoinDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataViewController.swift; sourceTree = "<group>"; };
@@ -54,9 +72,17 @@
 		4A6BB04DCE507464BC286AA5 /* Pods_SwiftyCryptoDisco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyCryptoDisco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		601EADDE0391DEB2C842348E /* Pods-SwiftyCryptoDisco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCryptoDisco.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCryptoDisco/Pods-SwiftyCryptoDisco.debug.xcconfig"; sourceTree = "<group>"; };
 		61077FDF8D1CBAD93BE34C06 /* Pods-SwiftyCryptoDisco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCryptoDisco.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCryptoDisco/Pods-SwiftyCryptoDisco.release.xcconfig"; sourceTree = "<group>"; };
+		B10F1EB229AEAA6FE363D0AB /* Pods_SwiftyCryptoDiscoUnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyCryptoDiscoUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		27121E142031FDE900C97AF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		275851AB1FEDC7B20032B748 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -77,10 +103,20 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		27121E182031FDE900C97AF0 /* SwiftyCryptoDiscoUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				27121E192031FDE900C97AF0 /* SwiftyCryptoDiscoUnitTests.swift */,
+				27121E1B2031FDE900C97AF0 /* Info.plist */,
+			);
+			path = SwiftyCryptoDiscoUnitTests;
+			sourceTree = "<group>";
+		};
 		275851A51FEDC7B10032B748 = {
 			isa = PBXGroup;
 			children = (
 				275851B01FEDC7B20032B748 /* SwiftyCryptoDisco */,
+				27121E182031FDE900C97AF0 /* SwiftyCryptoDiscoUnitTests */,
 				275851AF1FEDC7B20032B748 /* Products */,
 				1B801D6A9CF9232D2A286AAC /* Pods */,
 				BEF7F4B2B97404B1DE857AA0 /* Frameworks */,
@@ -91,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				275851AE1FEDC7B20032B748 /* SwiftyCryptoDisco.app */,
+				27121E172031FDE900C97AF0 /* SwiftyCryptoDiscoUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,8 +137,8 @@
 			children = (
 				275852001FFBD7200032B748 /* View Controllers */,
 				275852011FFBD7300032B748 /* Views */,
-				275852021FFBD73A0032B748 /* Client */,
 				275852031FFBD74D0032B748 /* Model */,
+				275852021FFBD73A0032B748 /* Client */,
 				275851CB1FEE13820032B748 /* Supporting Files */,
 				275851B11FEDC7B20032B748 /* AppDelegate.swift */,
 				275851BD1FEDC7B20032B748 /* Info.plist */,
@@ -113,8 +150,9 @@
 			isa = PBXGroup;
 			children = (
 				2747FB59202A82DE00B447DE /* GlobalsEnumsExtensions.swift */,
-				275851B81FEDC7B20032B748 /* Assets.xcassets */,
+				27121E112030EFF400C97AF0 /* ConnectionManager.swift */,
 				275851BA1FEDC7B20032B748 /* LaunchScreen.storyboard */,
+				275851B81FEDC7B20032B748 /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -165,7 +203,9 @@
 		BEF7F4B2B97404B1DE857AA0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27121E24203200E000C97AF0 /* SwiftyJSON.framework */,
 				4A6BB04DCE507464BC286AA5 /* Pods_SwiftyCryptoDisco.framework */,
+				B10F1EB229AEAA6FE363D0AB /* Pods_SwiftyCryptoDiscoUnitTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,6 +213,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		27121E162031FDE900C97AF0 /* SwiftyCryptoDiscoUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27121E1E2031FDE900C97AF0 /* Build configuration list for PBXNativeTarget "SwiftyCryptoDiscoUnitTests" */;
+			buildPhases = (
+				27121E132031FDE900C97AF0 /* Sources */,
+				27121E142031FDE900C97AF0 /* Frameworks */,
+				27121E152031FDE900C97AF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27121E1D2031FDE900C97AF0 /* PBXTargetDependency */,
+			);
+			name = SwiftyCryptoDiscoUnitTests;
+			productName = SwiftyCryptoDiscoUnitTests;
+			productReference = 27121E172031FDE900C97AF0 /* SwiftyCryptoDiscoUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		275851AD1FEDC7B20032B748 /* SwiftyCryptoDisco */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 275851C01FEDC7B20032B748 /* Build configuration list for PBXNativeTarget "SwiftyCryptoDisco" */;
@@ -199,10 +257,15 @@
 		275851A61FEDC7B10032B748 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0910;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Mat Schmid";
 				TargetAttributes = {
+					27121E162031FDE900C97AF0 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 275851AD1FEDC7B20032B748;
+					};
 					275851AD1FEDC7B20032B748 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -223,11 +286,19 @@
 			projectRoot = "";
 			targets = (
 				275851AD1FEDC7B20032B748 /* SwiftyCryptoDisco */,
+				27121E162031FDE900C97AF0 /* SwiftyCryptoDiscoUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		27121E152031FDE900C97AF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		275851AC1FEDC7B20032B748 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -298,6 +369,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		27121E132031FDE900C97AF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27121E252032023A00C97AF0 /* GlobalsEnumsExtensions.swift in Sources */,
+				27121E1A2031FDE900C97AF0 /* SwiftyCryptoDiscoUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		275851AA1FEDC7B20032B748 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -315,12 +395,21 @@
 				27ED56D82000253F008D02EA /* SettingsTableViewController.swift in Sources */,
 				275851CA1FEDFD740032B748 /* CurrencyDataFetcher.swift in Sources */,
 				275851C81FEDDE5A0032B748 /* CoinTableViewCell.swift in Sources */,
+				27121E122030EFF500C97AF0 /* ConnectionManager.swift in Sources */,
 				274B9F59202A0A90000FCA2A /* OHLCVTableViewCell.swift in Sources */,
 				275851B21FEDC7B20032B748 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27121E1D2031FDE900C97AF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 275851AD1FEDC7B20032B748 /* SwiftyCryptoDisco */;
+			targetProxy = 27121E1C2031FDE900C97AF0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		275851B51FEDC7B20032B748 /* Main.storyboard */ = {
@@ -342,6 +431,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		27121E1F2031FDE900C97AF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E599AGARWK;
+				INFOPLIST_FILE = SwiftyCryptoDiscoUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = matschmid.SwiftyCryptoDiscoUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftyCryptoDisco.app/SwiftyCryptoDisco";
+			};
+			name = Debug;
+		};
+		27121E202031FDE900C97AF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E599AGARWK;
+				INFOPLIST_FILE = SwiftyCryptoDiscoUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = matschmid.SwiftyCryptoDiscoUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftyCryptoDisco.app/SwiftyCryptoDisco";
+			};
+			name = Release;
+		};
 		275851BE1FEDC7B20032B748 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -484,6 +607,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		27121E1E2031FDE900C97AF0 /* Build configuration list for PBXNativeTarget "SwiftyCryptoDiscoUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27121E1F2031FDE900C97AF0 /* Debug */,
+				27121E202031FDE900C97AF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		275851A91FEDC7B20032B748 /* Build configuration list for PBXProject "SwiftyCryptoDisco" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

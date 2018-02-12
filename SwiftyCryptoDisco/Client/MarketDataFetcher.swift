@@ -16,7 +16,7 @@ class MarketDataFetcher {
     
     let APIKey = "55DCAFC7-20C7-4099-8BDA-2C4421377405"
     
-    func getMarketDataForBaseCurrency(baseCurrency: String, completion: @escaping(_ exchanges: [MarketExchange]?) -> Void) {
+    func getMarketDataForBaseCurrency(coinCurrency: String, baseCurrency: String, completion: @escaping(_ exchanges: [MarketExchange]?) -> Void) {
         let header : HTTPHeaders = [
             "X-CoinAPI-Key": APIKey
         ]
@@ -26,7 +26,7 @@ class MarketDataFetcher {
                 print(json)
                 var marketArray: [MarketExchange] = []
                 for subJson in json {
-                    if subJson.1["asset_id_base"].stringValue == baseCurrency {
+                    if subJson.1["asset_id_base"].stringValue == coinCurrency, subJson.1["asset_id_quote"].stringValue == baseCurrency {
                         let marketExchange = MarketExchange(withDictionary: subJson.1)
                         marketArray.append(marketExchange)
                         break

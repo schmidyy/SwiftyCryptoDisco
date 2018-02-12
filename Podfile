@@ -8,6 +8,5 @@ target 'SwiftyCryptoDisco' do
   # Pods for SwiftyCryptoDisco
   pod 'Alamofire'
   pod 'SwiftyJSON'
-  # pod 'SwiftCharts', '0.6'
 
 end
