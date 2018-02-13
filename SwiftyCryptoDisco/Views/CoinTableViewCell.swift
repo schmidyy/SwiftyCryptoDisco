@@ -45,6 +45,13 @@ class CoinTableViewCell: UITableViewCell {
                     self.currencyDotSeperatorLabel.textColor = UIColor(named: "fluoGreen")
                     self.currencyArrowImageView.transform = CGAffineTransform(scaleX: 1, y: -1)
                 }
+            } else {
+                DispatchQueue.main.async {
+                    self.currency24hrChangeLabel.textColor = UIColor(named: "flatRed")
+                    self.currencyArrowImageView.tintColor = UIColor(named: "flatRed")
+                    self.currencyDotSeperatorLabel.textColor = UIColor(named: "flatRed")
+                    //self.currencyArrowImageView.transform = CGAffineTransform(scaleX: 1, y: -1)
+                }
             }
         }
     }
@@ -63,6 +70,14 @@ class CoinTableViewCell: UITableViewCell {
                 self.currencyDotSeperatorLabel.textColor = UIColor(named: "fluoGreen")
                 self.currencyArrowImageView.transform = CGAffineTransform(scaleX: 1, y: -1)
             }
+        } else {
+            DispatchQueue.main.async {
+                self.currency24hrChangeLabel.textColor = UIColor(named: "flatRed")
+                self.currencyArrowImageView.tintColor = UIColor(named: "flatRed")
+                self.currencyDotSeperatorLabel.textColor = UIColor(named: "flatRed")
+                //self.currencyArrowImageView.transform = CGAffineTransform(scaleX: 1, y: -1)
+            }
+
         }
     }
     
